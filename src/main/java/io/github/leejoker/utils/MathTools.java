@@ -55,7 +55,7 @@ public class MathTools {
      * @param dayNumber day number in current year
      * @return
      */
-    public static Double declination(Integer dayNumber) {
+    public static Double sunDeclination(Integer dayNumber) {
         assert dayNumber != null && dayNumber != 0;
         double b = decimalDivide(2 * Math.PI * (dayNumber - 1), 365D);
         return 0.006918 - 0.399912 * Math.cos(b) + 0.070257 * Math.sin(b)
@@ -71,7 +71,7 @@ public class MathTools {
      */
     public static Double hourAngle(Double trueSunHour) {
         assert trueSunHour != null;
-        return (trueSunHour - 12) * 15;
+        return Math.toRadians((trueSunHour - 12) * 15);
     }
 
     /**
@@ -111,7 +111,8 @@ public class MathTools {
         assert dayNumber != null && dayNumber != 0;
 
         Double b = decimalDivide(2 * Math.PI * (dayNumber - 81), 364D);
-        return 9.87 * Math.sin(2 * b) - 7.53 * Math.cos(b) - 1.5 * Math.sin(b);
+        double min = 9.87 * Math.sin(2 * b) - 7.53 * Math.cos(b) - 1.5 * Math.sin(b);
+        return decimalDivide(min, 60D);
     }
 
     /**

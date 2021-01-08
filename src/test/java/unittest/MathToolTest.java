@@ -1,5 +1,6 @@
 package unittest;
 
+import io.github.leejoker.core.SunAltitude;
 import io.github.leejoker.utils.MathTools;
 import org.junit.Test;
 
@@ -13,5 +14,11 @@ public class MathToolTest {
     public void etTest() {
         Double result = MathTools.et(8);
         System.out.println(result);
+    }
+
+    @Test
+    public void calCurSunAltitudeTest() {
+        double degree = SunAltitude.calCurSunAltitude(39.916527, 116.397128);
+        System.out.println(degree);
     }
 }
