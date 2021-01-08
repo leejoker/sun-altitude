@@ -4,8 +4,6 @@ import io.github.leejoker.utils.MathTools;
 import org.junit.Test;
 
 /**
- * 敏感词实体
- *
  * @author leejoker <1056650571@qq.com>
  * @version 1.0
  * @date 2020/12/28 13:29
